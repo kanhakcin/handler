@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Física - Handler Profissional</title>
+  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-graduation-cap"></i> Handler</div>
+      <ul>
+        <li><a href="../index-improved.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#lessons"><i class="fas fa-book-open"></i> Aulas</a></li>
+        <li><a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a></li>
+      </ul>
+      <button class="mode-toggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subject-nav">
+      <h1><i class="fas fa-atom"></i> Física</h1>
+      <p>Conceitos fundamentais com fórmulas, exemplos e vídeos explicativos profissionais.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <h3>Cinemática</h3>
+        <div class="lesson-content">
+          <p><strong>Velocidade Média:</strong> v = Δs/Δt</p>
+          <p>Exemplo: 100km em 2h → v = 50km/h</p>
+          <p><strong>Aceleração:</strong> a = Δv/Δt</p>
+          <p>Movimento Uniformemente Variado (MUV): s = s0 + v0t + (at²)/2</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Leis de Newton</h3>
+        <div class="lesson-content">
+          <p><strong>1ª Lei (Inércia):</strong> Corpo mantém estado sem força resultante.</p>
+          <p><strong>2ª Lei:</strong> F = m · a</p>
+          <p><strong>3ª Lei:</strong> Ação = -Reação</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Ondas e Som</h3>
+        <div class="lesson-content">
+          <p><strong>Velocidade da Onda:</strong> v = f · λ</p>
+          <p>Som no ar: v ≈ 340 m/s</p>
+          <p>Frequência audível: 20 Hz - 20 kHz</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Eletricidade</h3>
+        <div class="lesson-content">
+          <p><strong>Lei de Ohm:</strong> V = R · I</p>
+          <p>Potência: P = V · I</p>
+          <p>Circuito Série: Req = R1 + R2</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Termodinâmica</h3>
+        <div class="lesson-content">
+          <p><strong>1ª Lei:</strong> ΔU = Q - W</p>
+          <p>Calor específico: Q = m · c · ΔT</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-fisica" class="quiz">
+      <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Física</h2>
+      <div class="quiz-question">
+        <p>Velocidade média para 200m em 10s?</p>
+        <label><input type="radio" name="q1" value="correct"> 20 m/s</label>
+        <label><input type="radio" name="q1" value="wrong"> 10 m/s</label>
+        <label><input type="radio" name="q1" value="wrong"> 200 m/s</label>
+      </div>
+      <div class="quiz-question">
+        <p>2ª Lei de Newton: F = ?</p>
+        <label><input type="radio" name="q2" value="correct"> m · a</label>
+        <label><input type="radio" name="q2" value="wrong"> v · t</label>
+        <label><input type="radio" name="q2" value="wrong"> m / a</label>
+      </div>
+      <div class="quiz-question">
+        <p>Velocidade do som no ar (~)?</p>
+        <label><input type="radio" name="q3" value="correct"> 340 m/s</label>
+        <label><input type="radio" name="q3" value="wrong"> 300 m/s</label>
+      </div>
+      <div id="quiz-score"></div>
+    </div>
+
+    <div id="videos" class="videos-section">
+      <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/7O2h2oD-0Mw?rel=0" title="Cinemática Física Total" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Cinemática Completa - Física Total</h3>
+            <p>Movimento retilíneo uniforme e uniformemente acelerado.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/0k5iAtoDG4Y?rel=0" title="Leis de Newton Prof Ferretto" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Leis de Newton - Prof. Ferretto</h3>
+            <p>Explicação detalhada das 3 leis clássicas.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID3?rel=0" title="Ondas e Som" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Ondas e Som - Física em Foco</h3>
+            <p>Propriedades das ondas e propagação sonora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2024 Handler - Design Profissional</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

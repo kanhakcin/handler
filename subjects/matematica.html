@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática - Handler Profissional</title>
+  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-graduation-cap"></i> Handler</div>
+      <ul>
+        <li><a href="../index-improved.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#lessons"><i class="fas fa-book-open"></i> Aulas</a></li>
+        <li><a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a></li>
+      </ul>
+      <button class="mode-toggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subject-nav">
+      <h1><i class="fas fa-calculator"></i> Matemática</h1>
+      <p>Fundamentos matemáticos com fórmulas, demonstrações e aplicações práticas.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <h3>Álgebra Linear</h3>
+        <div class="lesson-content">
+          <p><strong>1º Grau:</strong> ax + b = 0 → x = -b/a</p>
+          <p>Ex: 2x + 4 = 0 → x = -2</p>
+          <p><strong>Sistemas:</strong> Substituição/Eliminação/Addição</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Geometria Plana</h3>
+        <div class="lesson-content">
+          <p><strong>Triângulo:</strong> A = (base × altura)/2</p>
+          <p><strong>Círculo:</strong> A = πr² | C = 2πr (π ≈ 3.14)</p>
+          <p>Teorema Pitágoras: a² + b² = c²</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Trigonometria</h3>
+        <div class="lesson-content">
+          <p><strong>Seno:</strong> oposto/hipotenusa | Cosseno: adjacente/hipotenusa</p>
+          <p>Triângulo 3-4-5: sin = 3/5 = 0.6</p>
+          <p>Identidades: sin² + cos² = 1</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Funções</h3>
+        <div class="lesson-content">
+          <p><strong>Linear:</strong> f(x) = ax + b | Quadrática: ax² + bx + c</p>
+          <p><strong>Domínio/Imagem:</strong> Todos R / Vértice para cima/baixo</p>
+          <p>Raízes: Bhaskara Δ = b² - 4ac</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Estatística</h3>
+        <div class="lesson-content">
+          <p><strong>Média:</strong> Σxi/n | Mediana: meio ordenado</p>
+          <p><strong>Desvio Padrão:</strong> √[Σ(xi - x̄)²/n]</p>
+          <p>Probabilidade: favoráveis/possíveis (0 a 1)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-matematica" class="quiz">
+      <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Matemática</h2>
+      <div class="quiz-question">
+        <p>Resolva 3x - 6 = 0?</p>
+        <label><input type="radio" name="q1" value="correct"> x=2</label>
+        <label><input type="radio" name="q1" value="wrong"> x=3</label>
+        <label><input type="radio" name="q1" value="wrong"> x=-2</label>
+      </div>
+      <div class="quiz-question">
+        <p>Área círculo r=2 (π=3.14)?</p>
+        <label><input type="radio" name="q2" value="correct"> 12.56</label>
+        <label><input type="radio" name="q2" value="wrong"> 6.28</label>
+        <label><input type="radio" name="q2" value="wrong"> 4</label>
+      </div>
+      <div class="quiz-question">
+        <p>Triângulo 3-4-5, seno ângulo oposto 3?</p>
+        <label><input type="radio" name="q3" value="correct"> 0.6</label>
+        <label><input type="radio" name="q3" value="wrong"> 0.8</label>
+        <label><input type="radio" name="q3" value="wrong"> 0.4</label>
+      </div>
+      <div id="quiz-score"></div>
+    </div>
+
+    <div id="videos" class="videos-section">
+      <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/9v5gM8qCYLM?rel=0" title="Álgebra Linear Ferretto" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Álgebra Linear Completa - Ferretto</h3>
+            <p>Equações 1º/2º grau e sistemas lineares.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/OuR0vYkDG7Y?rel=0" title="Geometria Plana" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Geometria Plana - Matemática Rio com Prof. Rafael</h3>
+            <p>Triângulos, círculos e teorema de Pitágoras.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/puNoC57CY26?rel=0" title="Trigonometria Completa" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Trigonometria - Ferretto Matemática</h3>
+            <p>Seno, cosseno, identidades e triângulos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2024 Handler - Design Profissional</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

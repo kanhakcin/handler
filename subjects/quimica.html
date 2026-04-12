@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Química - Handler Profissional</title>
+  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-graduation-cap"></i> Handler</div>
+      <ul>
+        <li><a href="../index-improved.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#lessons"><i class="fas fa-book-open"></i> Aulas</a></li>
+        <li><a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a></li>
+      </ul>
+      <button class="mode-toggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subject-nav">
+      <h1><i class="fas fa-flask"></i> Química</h1>
+      <p>Elementos, reações químicas, balanceamento e conceitos fundamentais da matéria.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <h3>Estrutura Atômica</h3>
+        <div class="lesson-content">
+          <p><strong>Modelo:</strong> Rutherford-Bohr (elétrons órbitas)</p>
+          <p><strong>Nº Atômico Z:</strong> Prótons | Massa A: prótons + nêutrons</p>
+          <p>Isótopos: mesmo Z, A diferente (C-12, C-14)</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Ligações Químicas</h3>
+        <div class="lesson-content">
+          <p><strong>Iônica:</strong> Transferência e- (NaCl Na⁺ Cl⁻)</p>
+          <p><strong>Covalente:</strong> Compartilhamento (H₂O, CO₂)</p>
+          <p><strong>Metálica:</strong> "Mar elétrons" metais</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Reações Químicas</h3>
+        <div class="lesson-content">
+          <p><strong>Combustão:</strong> CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+          <p><strong>Síntese:</strong> A + B → AB | <strong>Decomposição:</strong> AB → A + B</p>
+          <p>Balanceamento: Lei Lavoisier (átomos conservados)</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Estoquiometria</h3>
+        <div class="lesson-content">
+          <p><strong>Relação Molar:</strong> Coeficientes balanceada</p>
+          <p><strong>Massa Molar:</strong> g/mol (H₂O = 18)</p>
+          <p>n = massa/MM | Np = n × NA (6.02×10²³)</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Química Orgânica</h3>
+        <div class="lesson-content">
+          <p><strong>Hidrocarbonetos:</strong> Alcanos (CnH₂n+₂), Alcenos (CnH₂n)</p>
+          <p><strong>Funções:</strong> Álcoois (-OH), Aldeídos (-CHO)</p>
+          <p>Isomeria: Mesma fórmula, estrutura diferente</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-quimica" class="quiz">
+      <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Química</h2>
+      <div class="quiz-question">
+        <p>Elemento Z=1?</p>
+        <label><input type="radio" name="q1" value="correct"> Hidrogênio</label>
+        <label><input type="radio" name="q1" value="wrong"> Hélio</label>
+        <label><input type="radio" name="q1" value="wrong"> Carbono</label>
+      </div>
+      <div class="quiz-question">
+        <p>NaCl tipo ligação?</p>
+        <label><input type="radio" name="q2" value="correct"> Iônica</label>
+        <label><input type="radio" name="q2" value="wrong"> Covalente</label>
+        <label><input type="radio" name="q2" value="wrong"> Metálica</label>
+      </div>
+      <div class="quiz-question">
+        <p>Combustão metano produz?</p>
+        <label><input type="radio" name="q3" value="correct"> CO₂ + H₂O</label>
+        <label><input type="radio" name="q3" value="wrong"> CH₄ + O₂</label>
+        <label><input type="radio" name="q3" value="wrong"> H₂ + C</label>
+      </div>
+      <div id="quiz-score"></div>
+    </div>
+
+    <div id="videos" class="videos-section">
+      <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/jJ4yIycoK3Q?rel=0" title="Estrutura Atômica Prof Valim" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Estrutura Atômica - Paulo Valim</h3>
+            <p>Modelos atômicos do Dalton ao Bohr moderno.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/4mO8A0bR2a0?rel=0" title="Ligações Químicas Ferretto" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Ligações Químicas - Prof. Ferretto</h3>
+            <p>Iônica, covalente polar/apolar e metálica completa.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/L9tFUpkK4C4?rel=0" title="Reações Químicas" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Reações e Balanceamento - Química com Prof. Paulo Valim</h3>
+            <p>Tipos e como balancear qualquer equação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2024 Handler - Design Profissional</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

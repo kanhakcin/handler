@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biologia - Handler Profissional</title>
+  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-graduation-cap"></i> Handler</div>
+      <ul>
+        <li><a href="../index-improved.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#lessons"><i class="fas fa-book-open"></i> Aulas</a></li>
+        <li><a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a></li>
+      </ul>
+      <button class="mode-toggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subject-nav">
+      <h1><i class="fas fa-dna"></i> Biologia</h1>
+      <p>Vida, células, ecossistemas e processos biológicos fundamentais.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <h3>Célula</h3>
+        <div class="lesson-content">
+          <p><strong>Procarioto vs Eucarioto:</strong> Sem/com núcleo definido</p>
+          <p><strong>Organelas:</strong> Mitocôndria (energia), Ribossomos (proteínas)</p>
+          <p>Teoria Celular: Toda vida de células → células.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Genética</h3>
+        <div class="lesson-content">
+          <p><strong>DNA:</strong> Dupla hélice A-T, C-G</p>
+          <p><strong>Lei de Mendel:</strong> 3:1 segregação, dominância</p>
+          <p>Replicação: Sem-conservativa → semiconservativa (Meselson-Stahl)</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Ecologia</h3>
+        <div class="lesson-content">
+          <p><strong>Cadeia Alimentar:</strong> Produtor → Herbívoro → Carnívoro → Decompositor</p>
+          <p><strong>Fluxo Energia:</strong> 10% eficiência entre níveis tróficos</p>
+          <p>Biodiversidade: Variação espécies/ecossistemas</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Evolução</h3>
+        <div class="lesson-content">
+          <p><strong>Seleção Natural:</strong> Darwin - Sobrevivência dos mais adaptados</p>
+          <p><strong>Evidências:</strong> Fósseis, anatomia comparada, molecular</p>
+          <p>Especiação: Isolamento reprodutivo geográfico</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Sistemas Humanos</h3>
+        <div class="lesson-content">
+          <p><strong>Circulatório:</strong> Coração 4 câmaras, dupla circulação</p>
+          <p><strong>Respiratório:</strong> Alvéolos O2/CO2, hemoglobina</p>
+          <p><strong>Imunológico:</strong> Linfócitos B/T, anticorpos</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-biologia" class="quiz">
+      <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Biologia</h2>
+      <div class="quiz-question">
+        <p>Célula sem núcleo?</p>
+        <label><input type="radio" name="q1" value="correct"> Procarioto</label>
+        <label><input type="radio" name="q1" value="wrong"> Eucarioto</label>
+        <label><input type="radio" name="q1" value="wrong"> Animal</label>
+      </div>
+      <div class="quiz-question">
+        <p>DNA bases pareadas A com?</p>
+        <label><input type="radio" name="q2" value="correct"> T</label>
+        <label><input type="radio" name="q2" value="wrong"> C</label>
+        <label><input type="radio" name="q2" value="wrong"> G</label>
+      </div>
+      <div class="quiz-question">
+        <p>Energia transferida entre níveis tróficos?</p>
+        <label><input type="radio" name="q3" value="correct"> 10%</label>
+        <label><input type="radio" name="q3" value="wrong"> 100%</label>
+      </div>
+      <div id="quiz-score"></div>
+    </div>
+
+    <div id="videos" class="videos-section">
+      <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&enablejsapi=1" title="Biologia Celular" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Aula Biologia Celular Completa</h3>
+            <p>Organelas e teoria celular - sempre funciona.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&enablejsapi=1" title="Genética" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Leis de Mendel Genética</h3>
+            <p>Herança genética básica explicada.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&enablejsapi=1" title="Ecologia" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Ecologia Cadeias Alimentares</h3>
+            <p>Ecossistemas e fluxo de energia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2024 Handler - Design Profissional</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

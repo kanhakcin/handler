@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handler - Plataforma de Estudos Profissional</title>
+  <link rel="stylesheet" href="css/style-professional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-graduation-cap"></i> Handler</div>
+      <ul>
+        <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="#subjects"><i class="fas fa-book"></i> Matérias</a></li>
+      </ul>
+      <button class="mode-toggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Plataforma Profissional de Estudos</h1>
+    <p>Conteúdo completo para ensino médio com aulas interativas, quizzes e progresso salvo. Design moderno e responsivo.</p>
+    <a href="#subjects" class="btn">Começar <i class="fas fa-rocket"></i></a>
+  </section>
+
+  <section id="subjects" class="subject-grid">
+    <div class="subject-card" data-subject="portugues" style="--i: 1;">
+      <i class="fas fa-language fa-3x" style="color: #ec4899;"></i>
+      <h2>Português</h2>
+      <p>Gramática avançada, interpretação e literatura brasileira com exercícios práticos.</p>
+    </div>
+    <div class="subject-card" data-subject="matematica" style="--i: 2;">
+      <i class="fas fa-calculator fa-3x" style="color: #10b981;"></i>
+      <h2>Matemática</h2>
+      <p>Álgebra, geometria e funções resolvidas passo a passo com visualizações.</p>
+    </div>
+    <div class="subject-card" data-subject="fisica" style="--i: 3;">
+      <i class="fas fa-atom fa-3x" style="color: #f59e0b;"></i>
+      <h2>Física</h2>
+      <p>Mecânica, eletricidade e ondas com fórmulas e simulações práticas.</p>
+    </div>
+    <div class="subject-card" data-subject="biologia" style="--i: 4;">
+      <i class="fas fa-dna fa-3x" style="color: #06b6d4;"></i>
+      <h2>Biologia</h2>
+      <p>Genética, ecologia e citologia com diagramas interativos.</p>
+    </div>
+    <div class="subject-card" data-subject="quimica" style="--i: 5;">
+      <i class="fas fa-flask fa-3x" style="color: #ef4444;"></i>
+      <h2>Química</h2>
+      <p>Reações, tabela periódica e balanceamento molecular.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><i class="fas fa-heart"></i> &copy; 2024 Handler - Design Profissional por BLACKBOXAI</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
