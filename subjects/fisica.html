@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Física - Handler Profissional</title>
-  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="../css/style-professional.css?v=2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -26,49 +26,70 @@
       <p>Conceitos fundamentais com fórmulas, exemplos e vídeos explicativos profissionais.</p>
     </div>
 
-    <div class="lesson-grid">
+    <div id="lessons" class="lesson-grid">
       <div class="lesson-card">
         <h3>Cinemática</h3>
         <div class="lesson-content">
-          <p><strong>Velocidade Média:</strong> v = Δs/Δt</p>
-          <p>Exemplo: 100km em 2h → v = 50km/h</p>
-          <p><strong>Aceleração:</strong> a = Δv/Δt</p>
-          <p>Movimento Uniformemente Variado (MUV): s = s0 + v0t + (at²)/2</p>
+          <p><strong>Velocidade média:</strong> v<sub>m</sub> = Δs/Δt, em que Δs é a variação da posição e Δt é o intervalo de tempo. Para 100 m percorridos em 20 s, v<sub>m</sub> = 5 m/s.</p>
+          <p><strong>Aceleração média:</strong> a<sub>m</sub> = Δv/Δt. Ela mede quanto a velocidade varia por unidade de tempo.</p>
+          <p><strong>Movimento uniforme (MU):</strong> a velocidade é constante e s = s<sub>0</sub> + vt.</p>
+          <p><strong>Movimento uniformemente variado (MUV):</strong> a aceleração é constante; v = v<sub>0</sub> + at e s = s<sub>0</sub> + v<sub>0</sub>t + at²/2. As unidades precisam ser compatíveis.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Leis de Newton</h3>
         <div class="lesson-content">
-          <p><strong>1ª Lei (Inércia):</strong> Corpo mantém estado sem força resultante.</p>
-          <p><strong>2ª Lei:</strong> F = m · a</p>
-          <p><strong>3ª Lei:</strong> Ação = -Reação</p>
+          <p><strong>1ª lei (inércia):</strong> se a força resultante sobre um corpo é zero, ele permanece em repouso ou em movimento retilíneo com velocidade constante.</p>
+          <p><strong>2ª lei:</strong> a força resultante é igual ao produto da massa pela aceleração: F<sub>res</sub> = ma. No SI, força é medida em newtons (N).</p>
+          <p><strong>3ª lei:</strong> forças de ação e reação têm mesma intensidade e direção, sentidos opostos e atuam em corpos diferentes; por isso, não se anulam entre si.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Ondas e Som</h3>
         <div class="lesson-content">
-          <p><strong>Velocidade da Onda:</strong> v = f · λ</p>
-          <p>Som no ar: v ≈ 340 m/s</p>
-          <p>Frequência audível: 20 Hz - 20 kHz</p>
+          <p><strong>Relação fundamental:</strong> v = fλ, em que v é a velocidade de propagação, f é a frequência e λ é o comprimento de onda.</p>
+          <p>O som é uma onda mecânica e precisa de um meio material para se propagar. No ar, a cerca de 20 °C, sua velocidade é aproximadamente 343 m/s.</p>
+          <p>A faixa de audição humana costuma ser aproximada como 20 Hz a 20 kHz, mas varia entre pessoas e com a idade.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Eletricidade</h3>
         <div class="lesson-content">
-          <p><strong>Lei de Ohm:</strong> V = R · I</p>
-          <p>Potência: P = V · I</p>
-          <p>Circuito Série: Req = R1 + R2</p>
+          <p><strong>Lei de Ohm:</strong> para um resistor ôhmico em condições constantes, V = RI, em que tensão V é medida em volts, resistência R em ohms e corrente I em ampères.</p>
+          <p><strong>Potência elétrica:</strong> P = VI. Para um resistor ôhmico, também podem ser usadas P = I²R e P = V²/R.</p>
+          <p><strong>Associação em série:</strong> R<sub>eq</sub> = R<sub>1</sub> + R<sub>2</sub> + ... . Em paralelo, somam-se os inversos das resistências.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Termodinâmica</h3>
         <div class="lesson-content">
-          <p><strong>1ª Lei:</strong> ΔU = Q - W</p>
-          <p>Calor específico: Q = m · c · ΔT</p>
+          <p><strong>Energia interna:</strong> pela primeira lei da Termodinâmica, ΔU = Q − W quando W representa o trabalho realizado pelo sistema. Q é o calor recebido pelo sistema.</p>
+          <p><strong>Calor sensível:</strong> Q = mcΔT, em que m é a massa, c é o calor específico e ΔT é a variação de temperatura. A fórmula vale sem mudança de estado físico.</p>
+          <p>Calor é energia transferida por diferença de temperatura; não é uma substância armazenada no corpo.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Trabalho, energia e potência</h3>
+        <div class="lesson-content">
+          <p><strong>Trabalho de uma força constante:</strong> W = F · d · cos(θ), em que d é o deslocamento e θ é o ângulo entre a força e o deslocamento. No SI, trabalho é medido em joules (J).</p>
+          <p>Se uma força de 10 N atua na mesma direção de um deslocamento de 3 m, ela realiza 30 J de trabalho. Uma força perpendicular ao deslocamento realiza trabalho nulo nesse modelo.</p>
+          <p><strong>Energia cinética:</strong> E<sub>c</sub> = mv²/2. Próximo à superfície da Terra, a energia potencial gravitacional pode ser calculada por E<sub>p</sub> = mgh, escolhendo um nível de referência.</p>
+          <p><strong>Potência:</strong> P = W/Δt mede a rapidez da transferência de energia e é expressa em watts (W). Em um sistema ideal sem forças dissipativas, a energia mecânica se conserva.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Pressão e hidrostática</h3>
+        <div class="lesson-content">
+          <p><strong>Pressão:</strong> p = F/A, força perpendicular distribuída por uma área. No SI, a unidade é o pascal (Pa), equivalente a N/m².</p>
+          <p>Em um líquido em repouso, a pressão varia com a profundidade: p = p₀ + ρgh, em que ρ é a densidade do líquido e h é a profundidade medida a partir da superfície.</p>
+          <p>A pressão hidrostática aumenta com a profundidade e com a densidade do líquido. Em pontos de mesma profundidade no mesmo líquido conectado, ela tem o mesmo valor, desprezando efeitos adicionais.</p>
+          <p><strong>Princípio de Pascal:</strong> uma variação de pressão aplicada a um fluido confinado transmite-se ao fluido. Esse princípio é usado em sistemas hidráulicos.</p>
         </div>
       </div>
     </div>
@@ -76,21 +97,33 @@
     <div id="quiz-fisica" class="quiz">
       <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Física</h2>
       <div class="quiz-question">
-        <p>Velocidade média para 200m em 10s?</p>
+        <p>Um móvel percorre 200 m em 10 s. Qual é sua velocidade média escalar?</p>
         <label><input type="radio" name="q1" value="correct"> 20 m/s</label>
         <label><input type="radio" name="q1" value="wrong"> 10 m/s</label>
-        <label><input type="radio" name="q1" value="wrong"> 200 m/s</label>
+        <label><input type="radio" name="q1" value="wrong"> 2000 m/s</label>
       </div>
       <div class="quiz-question">
-        <p>2ª Lei de Newton: F = ?</p>
-        <label><input type="radio" name="q2" value="correct"> m · a</label>
-        <label><input type="radio" name="q2" value="wrong"> v · t</label>
-        <label><input type="radio" name="q2" value="wrong"> m / a</label>
+        <p>Uma força resultante de 12 N atua em um corpo de massa 3 kg. Qual é sua aceleração?</p>
+        <label><input type="radio" name="q2" value="correct"> 4 m/s²</label>
+        <label><input type="radio" name="q2" value="wrong"> 9 m/s²</label>
+        <label><input type="radio" name="q2" value="wrong"> 36 m/s²</label>
       </div>
       <div class="quiz-question">
-        <p>Velocidade do som no ar (~)?</p>
-        <label><input type="radio" name="q3" value="correct"> 340 m/s</label>
-        <label><input type="radio" name="q3" value="wrong"> 300 m/s</label>
+        <p>Por que o som não se propaga no vácuo?</p>
+        <label><input type="radio" name="q3" value="correct"> Porque é uma onda mecânica e precisa de um meio material</label>
+        <label><input type="radio" name="q3" value="wrong"> Porque sua frequência no vácuo seria muito baixa</label>
+      </div>
+      <div class="quiz-question">
+        <p>Uma força de 10 N atua na direção do movimento por 3 m. Qual trabalho ela realiza?</p>
+        <label><input type="radio" name="q4" value="correct"> 30 J</label>
+        <label><input type="radio" name="q4" value="wrong"> 13 J</label>
+        <label><input type="radio" name="q4" value="wrong"> 3 J</label>
+      </div>
+      <div class="quiz-question">
+        <p>Em um líquido parado, o que ocorre com a pressão hidrostática quando aumenta a profundidade?</p>
+        <label><input type="radio" name="q5" value="correct"> A pressão aumenta</label>
+        <label><input type="radio" name="q5" value="wrong"> A pressão sempre diminui</label>
+        <label><input type="radio" name="q5" value="wrong"> A pressão não depende da profundidade</label>
       </div>
       <div id="quiz-score"></div>
     </div>
@@ -99,24 +132,33 @@
       <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
       <div class="videos-grid">
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/7O2h2oD-0Mw?rel=0" title="Cinemática Física Total" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=cinem%C3%A1tica+velocidade+m%C3%A9dia+movimento+uniforme+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre cinemática no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre cinemática</span>
+          </a>
           <div class="video-info">
-            <h3>Cinemática Completa - Física Total</h3>
-            <p>Movimento retilíneo uniforme e uniformemente acelerado.</p>
+            <h3>Cinemática</h3>
+            <p>Resultados de busca sobre velocidade média, MU e MUV.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/0k5iAtoDG4Y?rel=0" title="Leis de Newton Prof Ferretto" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=leis+de+Newton+for%C3%A7a+resultante+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre as leis de Newton no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre as leis de Newton</span>
+          </a>
           <div class="video-info">
-            <h3>Leis de Newton - Prof. Ferretto</h3>
-            <p>Explicação detalhada das 3 leis clássicas.</p>
+            <h3>Leis de Newton</h3>
+            <p>Resultados de busca sobre inércia, força e ação e reação.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID3?rel=0" title="Ondas e Som" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=ondas+sonoras+frequ%C3%AAncia+comprimento+de+onda+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre ondas e som no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre ondas e som</span>
+          </a>
           <div class="video-info">
-            <h3>Ondas e Som - Física em Foco</h3>
-            <p>Propriedades das ondas e propagação sonora.</p>
+            <h3>Ondas e som</h3>
+            <p>Resultados de busca sobre frequência, comprimento de onda e som.</p>
           </div>
         </div>
       </div>
@@ -127,6 +169,6 @@
     <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2026 Handler - Design Profissional</p>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=3"></script>
 </body>
 </html>

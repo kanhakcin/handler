@@ -50,27 +50,49 @@ function initQuizzes() {
   const quizzes = document.querySelectorAll('.quiz');
   quizzes.forEach(quiz => {
     const questions = quiz.querySelectorAll('.quiz-question');
-    let score = 0;
-    let answered = 0;
     const scoreEl = quiz.querySelector('#quiz-score');
 
     questions.forEach(q => {
+      const feedback = document.createElement('p');
+      feedback.className = 'quiz-feedback';
+      feedback.setAttribute('role', 'status');
+      feedback.setAttribute('aria-live', 'polite');
+      q.append(feedback);
+
       const inputs = q.querySelectorAll('input[type="radio"]');
       inputs.forEach(input => {
         input.addEventListener('change', () => {
-          answered++;
-          if (input.value === 'correct') score++;
+          const isCorrect = input.value === 'correct';
+          feedback.textContent = isCorrect
+            ? 'Resposta correta.'
+            : 'Resposta incorreta. Tente outra alternativa.';
+          feedback.classList.toggle('is-correct', isCorrect);
+          feedback.classList.toggle('is-incorrect', !isCorrect);
+
+          q.querySelectorAll('label').forEach(label => {
+            label.classList.remove('is-correct', 'is-incorrect');
+          });
+          input.closest('label')?.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+
+          const selectedAnswers = [...questions]
+            .map(question => question.querySelector('input[type="radio"]:checked'))
+            .filter(Boolean);
+          const answered = selectedAnswers.length;
+          const score = selectedAnswers.filter(answer => answer.value === 'correct').length;
+
           if (scoreEl) {
             scoreEl.textContent = `Progresso: ${answered}/${questions.length}`;
+            scoreEl.classList.remove('quiz-score--success', 'quiz-score--review');
             if (answered === questions.length) {
               const percent = Math.round((score / questions.length) * 100);
-              scoreEl.innerHTML = `<strong>Nota: ${score}/${questions.length} (${percent}%)</strong>`;
-              scoreEl.style.color = percent >= 70 ? '#10b981' : '#ef4444';
-              scoreEl.style.fontSize = '1.2rem';
-              scoreEl.style.background = 'rgba(16,185,129,0.1)';
-              scoreEl.style.padding = '0.5rem 1rem';
-              scoreEl.style.borderRadius = '25px';
-              scoreEl.style.display = 'inline-block';
+              scoreEl.textContent = `Resultado: ${score}/${questions.length} (${percent}%). ${
+                score === questions.length
+                  ? 'Todas as respostas estão corretas.'
+                  : 'Revise as respostas incorretas e tente novamente.'
+              }`;
+              scoreEl.classList.add(
+                score === questions.length ? 'quiz-score--success' : 'quiz-score--review'
+              );
             }
           }
         });

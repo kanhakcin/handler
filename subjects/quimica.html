@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Química - Handler Profissional</title>
-  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="../css/style-professional.css?v=2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -26,49 +26,74 @@
       <p>Elementos, reações químicas, balanceamento e conceitos fundamentais da matéria.</p>
     </div>
 
-    <div class="lesson-grid">
+    <div id="lessons" class="lesson-grid">
       <div class="lesson-card">
         <h3>Estrutura Atômica</h3>
         <div class="lesson-content">
-          <p><strong>Modelo:</strong> Rutherford-Bohr (elétrons órbitas)</p>
-          <p><strong>Nº Atômico Z:</strong> Prótons | Massa A: prótons + nêutrons</p>
-          <p>Isótopos: mesmo Z, A diferente (C-12, C-14)</p>
+          <p><strong>Partículas:</strong> prótons têm carga positiva e nêutrons não têm carga; ambos ficam no núcleo. Elétrons têm carga negativa e ocupam a região ao redor do núcleo.</p>
+          <p><strong>Número atômico (Z):</strong> quantidade de prótons. Em um átomo neutro, o número de elétrons é igual ao de prótons. O número de massa (A) é a soma de prótons e nêutrons.</p>
+          <p><strong>Isótopos:</strong> átomos do mesmo elemento com igual Z e diferentes números de nêutrons; por isso, têm diferentes números de massa, como carbono-12 e carbono-14.</p>
+          <p>Os modelos atômicos foram aperfeiçoados ao longo do tempo. O modelo atual descreve elétrons em regiões de probabilidade, não em órbitas planetárias fixas.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Ligações Químicas</h3>
         <div class="lesson-content">
-          <p><strong>Iônica:</strong> Transferência e- (NaCl Na⁺ Cl⁻)</p>
-          <p><strong>Covalente:</strong> Compartilhamento (H₂O, CO₂)</p>
-          <p><strong>Metálica:</strong> "Mar elétrons" metais</p>
+          <p><strong>Ligação iônica:</strong> envolve atração eletrostática entre íons de cargas opostas, geralmente após transferência de elétrons. No NaCl, Na⁺ e Cl⁻ formam uma rede cristalina, não moléculas isoladas de NaCl.</p>
+          <p><strong>Ligação covalente:</strong> átomos compartilham pares de elétrons; ocorre, por exemplo, em H₂O e CO₂.</p>
+          <p><strong>Ligação metálica:</strong> cátions metálicos organizados interagem com elétrons deslocalizados, o que ajuda a explicar propriedades como condutividade elétrica e maleabilidade.</p>
+          <p>As propriedades de uma substância dependem das partículas presentes e da estrutura que elas formam.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Reações Químicas</h3>
         <div class="lesson-content">
-          <p><strong>Combustão:</strong> CH₄ + 2O₂ → CO₂ + 2H₂O</p>
-          <p><strong>Síntese:</strong> A + B → AB | <strong>Decomposição:</strong> AB → A + B</p>
-          <p>Balanceamento: Lei Lavoisier (átomos conservados)</p>
+          <p>Em uma reação química, os átomos são reorganizados. Uma equação representa reagentes à esquerda e produtos à direita.</p>
+          <p><strong>Exemplo de combustão completa do metano:</strong> CH₄ + 2 O₂ → CO₂ + 2 H₂O. A equação está balanceada: há 1 átomo de carbono, 4 de hidrogênio e 4 de oxigênio em cada lado.</p>
+          <p><strong>Tipos comuns:</strong> síntese (A + B → AB) e decomposição (AB → A + B). Há também reações de simples troca e dupla troca.</p>
+          <p><strong>Balanceamento:</strong> ajuste apenas os coeficientes para conservar a quantidade de átomos de cada elemento; não altere os índices das fórmulas.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Estoquiometria</h3>
         <div class="lesson-content">
-          <p><strong>Relação Molar:</strong> Coeficientes balanceada</p>
-          <p><strong>Massa Molar:</strong> g/mol (H₂O = 18)</p>
-          <p>n = massa/MM | Np = n × NA (6.02×10²³)</p>
+          <p><strong>Quantidade de matéria:</strong> n = m/M, em que n é medido em mol, m é a massa da amostra e M é a massa molar em g/mol.</p>
+          <p>A massa molar da água é aproximadamente 18 g/mol. Assim, 36 g de H₂O correspondem a 2 mol.</p>
+          <p><strong>Proporção na reação:</strong> os coeficientes da equação balanceada indicam as proporções em mol entre reagentes e produtos. Primeiro balanceie a equação; depois use essa proporção.</p>
+          <p>Um mol contém aproximadamente 6,022 × 10²³ entidades elementares (constante de Avogadro).</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Química Orgânica</h3>
         <div class="lesson-content">
-          <p><strong>Hidrocarbonetos:</strong> Alcanos (CnH₂n+₂), Alcenos (CnH₂n)</p>
-          <p><strong>Funções:</strong> Álcoois (-OH), Aldeídos (-CHO)</p>
-          <p>Isomeria: Mesma fórmula, estrutura diferente</p>
+          <p><strong>Hidrocarbonetos:</strong> são compostos formados apenas por carbono e hidrogênio. Nas cadeias abertas acíclicas, alcanos têm fórmula geral C<sub>n</sub>H<sub>2n+2</sub> e alcenos com uma ligação dupla têm fórmula C<sub>n</sub>H<sub>2n</sub>.</p>
+          <p><strong>Grupos funcionais:</strong> a hidroxila (−OH) caracteriza álcoois quando ligada a carbono saturado; o grupo −CHO caracteriza aldeídos.</p>
+          <p><strong>Isomeria:</strong> compostos podem ter a mesma fórmula molecular e diferentes estruturas, o que pode levar a propriedades distintas.</p>
+          <p>As fórmulas gerais dependem do tipo de cadeia e do número de insaturações; verifique sempre as condições antes de aplicá-las.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Tabela periódica e propriedades</h3>
+        <div class="lesson-content">
+          <p><strong>Organização:</strong> os elementos estão ordenados pelo número atômico crescente. As linhas são períodos e as colunas são grupos ou famílias; elementos do mesmo grupo tendem a apresentar propriedades químicas relacionadas.</p>
+          <p><strong>Metais</strong> geralmente conduzem bem eletricidade e calor; <strong>ametais</strong> têm propriedades variadas e muitos são maus condutores; os gases nobres formam um grupo de baixa reatividade em condições comuns.</p>
+          <p>Ao longo de um período, o raio atômico tende a diminuir da esquerda para a direita; descendo um grupo, tende a aumentar. São tendências gerais, não regras sem exceções para toda comparação.</p>
+          <p>O número atômico identifica o elemento. Para íons, a carga indica a diferença entre quantidade de prótons e elétrons.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Soluções e concentração</h3>
+        <div class="lesson-content">
+          <p><strong>Solução:</strong> mistura homogênea formada por soluto, que é dissolvido, e solvente, que dissolve. A solubilidade depende das substâncias e de condições como temperatura.</p>
+          <p><strong>Concentração comum:</strong> C = m/V, em que m é a massa do soluto em gramas e V é o volume da solução em litros; a unidade usual é g/L.</p>
+          <p>Exemplo: 10 g de sal em 2 L de solução correspondem a C = 5 g/L. Ao diluir, adiciona-se solvente: a quantidade de soluto permanece constante, embora a concentração diminua.</p>
+          <p>Em uma diluição, pode-se usar C₁V₁ = C₂V₂ quando as concentrações e os volumes são definidos na mesma base. Diferencie concentração da quantidade total de soluto.</p>
         </div>
       </div>
     </div>
@@ -76,22 +101,34 @@
     <div id="quiz-quimica" class="quiz">
       <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Química</h2>
       <div class="quiz-question">
-        <p>Elemento Z=1?</p>
-        <label><input type="radio" name="q1" value="correct"> Hidrogênio</label>
-        <label><input type="radio" name="q1" value="wrong"> Hélio</label>
-        <label><input type="radio" name="q1" value="wrong"> Carbono</label>
+        <p>Um átomo neutro tem número atômico Z = 8. Quantos elétrons ele possui?</p>
+        <label><input type="radio" name="q1" value="correct"> 8 elétrons</label>
+        <label><input type="radio" name="q1" value="wrong"> 16 elétrons</label>
+        <label><input type="radio" name="q1" value="wrong"> 4 elétrons</label>
       </div>
       <div class="quiz-question">
-        <p>NaCl tipo ligação?</p>
+        <p>Que interação mantém os íons Na⁺ e Cl⁻ unidos no sólido cloreto de sódio?</p>
         <label><input type="radio" name="q2" value="correct"> Iônica</label>
         <label><input type="radio" name="q2" value="wrong"> Covalente</label>
         <label><input type="radio" name="q2" value="wrong"> Metálica</label>
       </div>
       <div class="quiz-question">
-        <p>Combustão metano produz?</p>
-        <label><input type="radio" name="q3" value="correct"> CO₂ + H₂O</label>
-        <label><input type="radio" name="q3" value="wrong"> CH₄ + O₂</label>
-        <label><input type="radio" name="q3" value="wrong"> H₂ + C</label>
+        <p>Na equação balanceada CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos mols de O₂ reagem com 1 mol de CH₄?</p>
+        <label><input type="radio" name="q3" value="correct"> 2 mol</label>
+        <label><input type="radio" name="q3" value="wrong"> 1 mol</label>
+        <label><input type="radio" name="q3" value="wrong"> 4 mol</label>
+      </div>
+      <div class="quiz-question">
+        <p>Em qual ordem os elementos estão organizados na tabela periódica moderna?</p>
+        <label><input type="radio" name="q4" value="correct"> Número atômico crescente</label>
+        <label><input type="radio" name="q4" value="wrong"> Massa da amostra crescente</label>
+        <label><input type="radio" name="q4" value="wrong"> Quantidade de nêutrons decrescente</label>
+      </div>
+      <div class="quiz-question">
+        <p>Uma solução contém 10 g de soluto em 2 L. Qual é a concentração comum?</p>
+        <label><input type="radio" name="q5" value="correct"> 5 g/L</label>
+        <label><input type="radio" name="q5" value="wrong"> 20 g/L</label>
+        <label><input type="radio" name="q5" value="wrong"> 0,2 g/L</label>
       </div>
       <div id="quiz-score"></div>
     </div>
@@ -100,24 +137,33 @@
       <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
       <div class="videos-grid">
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/jJ4yIycoK3Q?rel=0" title="Estrutura Atômica Prof Valim" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=estrutura+at%C3%B4mica+n%C3%BAmero+at%C3%B4mico+is%C3%B3topos+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre estrutura atômica no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre estrutura atômica</span>
+          </a>
           <div class="video-info">
-            <h3>Estrutura Atômica - Paulo Valim</h3>
-            <p>Modelos atômicos do Dalton ao Bohr moderno.</p>
+            <h3>Estrutura atômica</h3>
+            <p>Resultados de busca sobre partículas, número atômico e isótopos.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/4mO8A0bR2a0?rel=0" title="Ligações Químicas Ferretto" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=liga%C3%A7%C3%A3o+i%C3%B4nica+covalente+met%C3%A1lica+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre ligações químicas no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre ligações químicas</span>
+          </a>
           <div class="video-info">
-            <h3>Ligações Químicas - Prof. Ferretto</h3>
-            <p>Iônica, covalente polar/apolar e metálica completa.</p>
+            <h3>Ligações químicas</h3>
+            <p>Resultados de busca sobre ligações iônicas, covalentes e metálicas.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/L9tFUpkK4C4?rel=0" title="Reações Químicas" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=balanceamento+de+equa%C3%A7%C3%B5es+qu%C3%ADmicas+combust%C3%A3o+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre reações e balanceamento químico no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre reações químicas</span>
+          </a>
           <div class="video-info">
-            <h3>Reações e Balanceamento - Química com Prof. Paulo Valim</h3>
-            <p>Tipos e como balancear qualquer equação.</p>
+            <h3>Reações e balanceamento</h3>
+            <p>Resultados de busca sobre conservação dos átomos e balanceamento.</p>
           </div>
         </div>
       </div>
@@ -128,6 +174,6 @@
     <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2026 Handler - Design Profissional</p>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=3"></script>
 </body>
 </html>

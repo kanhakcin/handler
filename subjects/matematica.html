@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matemática - Handler Profissional</title>
-  <link rel="stylesheet" href="../css/style-professional.css">
+  <link rel="stylesheet" href="../css/style-professional.css?v=2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -26,49 +26,71 @@
       <p>Fundamentos matemáticos com fórmulas, demonstrações e aplicações práticas.</p>
     </div>
 
-    <div class="lesson-grid">
+    <div id="lessons" class="lesson-grid">
       <div class="lesson-card">
-        <h3>Álgebra Linear</h3>
+        <h3>Equações e sistemas</h3>
         <div class="lesson-content">
-          <p><strong>1º Grau:</strong> ax + b = 0 → x = -b/a</p>
-          <p>Ex: 2x + 4 = 0 → x = -2</p>
-          <p><strong>Sistemas:</strong> Substituição/Eliminação/Addição</p>
+          <p><strong>Equação do 1º grau:</strong> ax + b = 0, com a ≠ 0, tem solução x = −b/a. Exemplo: 2x + 4 = 0, então x = −2.</p>
+          <p>Para resolver, faça operações equivalentes nos dois lados da igualdade e confira a solução substituindo-a na equação original.</p>
+          <p><strong>Sistemas lineares:</strong> representam condições simultâneas. Substituição e eliminação são métodos para encontrar valores que satisfaçam todas as equações.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Geometria Plana</h3>
         <div class="lesson-content">
-          <p><strong>Triângulo:</strong> A = (base × altura)/2</p>
-          <p><strong>Círculo:</strong> A = πr² | C = 2πr (π ≈ 3.14)</p>
-          <p>Teorema Pitágoras: a² + b² = c²</p>
+          <p><strong>Triângulo:</strong> área A = (base × altura)/2. Use a altura perpendicular à base escolhida.</p>
+          <p><strong>Círculo:</strong> área A = πr² e comprimento da circunferência C = 2πr, em que r é o raio.</p>
+          <p><strong>Teorema de Pitágoras:</strong> em um triângulo retângulo, a² + b² = c², sendo c a hipotenusa. Um triângulo de lados 3, 4 e 5 é retângulo.</p>
+          <p>Área é expressa em unidades quadradas; comprimento, em unidades lineares.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Trigonometria</h3>
         <div class="lesson-content">
-          <p><strong>Seno:</strong> oposto/hipotenusa | Cosseno: adjacente/hipotenusa</p>
-          <p>Triângulo 3-4-5: sin = 3/5 = 0.6</p>
-          <p>Identidades: sin² + cos² = 1</p>
+          <p>Em um triângulo retângulo, sen(θ) = cateto oposto/hipotenusa, cos(θ) = cateto adjacente/hipotenusa e tg(θ) = cateto oposto/cateto adjacente.</p>
+          <p>Em um triângulo 3-4-5, para o ângulo cujo cateto oposto mede 3, sen(θ) = 3/5 = 0,6.</p>
+          <p><strong>Identidade fundamental:</strong> sen²(θ) + cos²(θ) = 1. Identifique o ângulo e os lados em relação a ele antes de escolher a razão.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Funções</h3>
         <div class="lesson-content">
-          <p><strong>Linear:</strong> f(x) = ax + b | Quadrática: ax² + bx + c</p>
-          <p><strong>Domínio/Imagem:</strong> Todos R / Vértice para cima/baixo</p>
-          <p>Raízes: Bhaskara Δ = b² - 4ac</p>
+          <p><strong>Função afim:</strong> f(x) = ax + b; seu gráfico é uma reta e a inclinação depende de a.</p>
+          <p><strong>Função quadrática:</strong> f(x) = ax² + bx + c, com a ≠ 0; seu gráfico é uma parábola. Se a &gt; 0, ela se abre para cima; se a &lt; 0, para baixo.</p>
+          <p><strong>Raízes:</strong> resolvem f(x) = 0. Pela fórmula de Bhaskara, x = (−b ± √Δ)/(2a), com Δ = b² − 4ac.</p>
+          <p>Domínio é o conjunto de entradas permitidas; imagem é o conjunto de valores que a função pode assumir. Não são necessariamente todos os números reais.</p>
         </div>
       </div>
 
       <div class="lesson-card">
         <h3>Estatística</h3>
         <div class="lesson-content">
-          <p><strong>Média:</strong> Σxi/n | Mediana: meio ordenado</p>
-          <p><strong>Desvio Padrão:</strong> √[Σ(xi - x̄)²/n]</p>
-          <p>Probabilidade: favoráveis/possíveis (0 a 1)</p>
+          <p><strong>Média aritmética:</strong> soma dos valores dividida pela quantidade de valores. A mediana é o valor central após ordenar os dados; com quantidade par, é a média dos dois valores centrais.</p>
+          <p><strong>Dispersão:</strong> amplitude é a diferença entre maior e menor valor. O desvio padrão resume o afastamento dos dados em relação à média; a fórmula depende de se tratar de população ou amostra.</p>
+          <p><strong>Probabilidade:</strong> em resultados equiprováveis, P(evento) = casos favoráveis/casos possíveis. Seu valor fica entre 0 e 1 (ou entre 0% e 100%).</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Porcentagem e matemática financeira</h3>
+        <div class="lesson-content">
+          <p><strong>Porcentagem:</strong> x% corresponde a x/100. Para calcular 15% de 200, fazemos 0,15 × 200 = 30.</p>
+          <p><strong>Acréscimo e desconto:</strong> um aumento de 10% multiplica o valor inicial por 1,10; um desconto de 10% multiplica por 0,90. Percentuais sucessivos são aplicados ao valor atualizado, não somados automaticamente.</p>
+          <p><strong>Juros simples:</strong> J = C · i · t, em que C é o capital, i a taxa por período e t o número de períodos compatível com a taxa. O montante é M = C + J.</p>
+          <p>Sempre converta a taxa para decimal e confira se período da taxa e tempo usam a mesma unidade. Compare ofertas considerando o custo total, não apenas a parcela.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <h3>Progressões aritméticas e geométricas</h3>
+        <div class="lesson-content">
+          <p><strong>Progressão aritmética (PA):</strong> sequência em que a diferença entre termos consecutivos é constante, chamada razão r. O termo geral é a<sub>n</sub> = a<sub>1</sub> + (n − 1)r.</p>
+          <p>Na PA 3, 7, 11, ... a razão é 4 e o quinto termo é 3 + 4 · 4 = 19. A soma dos n primeiros termos é S<sub>n</sub> = n(a<sub>1</sub> + a<sub>n</sub>)/2.</p>
+          <p><strong>Progressão geométrica (PG):</strong> cada termo é obtido multiplicando o anterior por uma razão q. O termo geral é a<sub>n</sub> = a<sub>1</sub> · q<sup>n−1</sup>.</p>
+          <p>Uma PA modela variações aditivas constantes; uma PG modela variações multiplicativas constantes, como certos crescimentos percentuais compostos.</p>
         </div>
       </div>
     </div>
@@ -76,22 +98,34 @@
     <div id="quiz-matematica" class="quiz">
       <h2><i class="fas fa-clipboard-list"></i> Quiz Rápido Matemática</h2>
       <div class="quiz-question">
-        <p>Resolva 3x - 6 = 0?</p>
+        <p>Qual é a solução de 3x − 6 = 0?</p>
         <label><input type="radio" name="q1" value="correct"> x=2</label>
         <label><input type="radio" name="q1" value="wrong"> x=3</label>
         <label><input type="radio" name="q1" value="wrong"> x=-2</label>
       </div>
       <div class="quiz-question">
-        <p>Área círculo r=2 (π=3.14)?</p>
-        <label><input type="radio" name="q2" value="correct"> 12.56</label>
-        <label><input type="radio" name="q2" value="wrong"> 6.28</label>
-        <label><input type="radio" name="q2" value="wrong"> 4</label>
+        <p>Qual é a área de um círculo de raio 2 unidades? Use π ≈ 3,14.</p>
+        <label><input type="radio" name="q2" value="correct"> 12,56 unidades²</label>
+        <label><input type="radio" name="q2" value="wrong"> 6,28 unidades²</label>
+        <label><input type="radio" name="q2" value="wrong"> 4 unidades²</label>
       </div>
       <div class="quiz-question">
-        <p>Triângulo 3-4-5, seno ângulo oposto 3?</p>
-        <label><input type="radio" name="q3" value="correct"> 0.6</label>
-        <label><input type="radio" name="q3" value="wrong"> 0.8</label>
-        <label><input type="radio" name="q3" value="wrong"> 0.4</label>
+        <p>Em um triângulo retângulo de lados 3, 4 e 5, qual é o seno do ângulo oposto ao lado 3?</p>
+        <label><input type="radio" name="q3" value="correct"> 0,6</label>
+        <label><input type="radio" name="q3" value="wrong"> 0,8</label>
+        <label><input type="radio" name="q3" value="wrong"> 0,4</label>
+      </div>
+      <div class="quiz-question">
+        <p>Quanto é 15% de 200?</p>
+        <label><input type="radio" name="q4" value="correct"> 30</label>
+        <label><input type="radio" name="q4" value="wrong"> 15</label>
+        <label><input type="radio" name="q4" value="wrong"> 45</label>
+      </div>
+      <div class="quiz-question">
+        <p>Na PA 2, 5, 8, ... qual é o quarto termo?</p>
+        <label><input type="radio" name="q5" value="correct"> 11</label>
+        <label><input type="radio" name="q5" value="wrong"> 10</label>
+        <label><input type="radio" name="q5" value="wrong"> 14</label>
       </div>
       <div id="quiz-score"></div>
     </div>
@@ -100,24 +134,33 @@
       <h2><i class="fab fa-youtube"></i> Vídeos Recomendados</h2>
       <div class="videos-grid">
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/9v5gM8qCYLM?rel=0" title="Álgebra Linear Ferretto" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=equacao+do+primeiro+grau+sistemas+lineares+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre equações e sistemas lineares no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre equações</span>
+          </a>
           <div class="video-info">
-            <h3>Álgebra Linear Completa - Ferretto</h3>
-            <p>Equações 1º/2º grau e sistemas lineares.</p>
+            <h3>Equações e sistemas lineares</h3>
+            <p>Resultados de busca sobre equações do 1º grau e sistemas.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/OuR0vYkDG7Y?rel=0" title="Geometria Plana" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=geometria+plana+%C3%A1rea+Pit%C3%A1goras+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre geometria plana no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre geometria</span>
+          </a>
           <div class="video-info">
-            <h3>Geometria Plana - Matemática Rio com Prof. Rafael</h3>
-            <p>Triângulos, círculos e teorema de Pitágoras.</p>
+            <h3>Geometria plana</h3>
+            <p>Resultados de busca sobre áreas, círculos e teorema de Pitágoras.</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/puNoC57CY26?rel=0" title="Trigonometria Completa" allowfullscreen></iframe>
+          <a class="video-link" href="https://www.youtube.com/results?search_query=trigonometria+seno+cosseno+tri%C3%A2ngulo+ret%C3%A2ngulo+ensino+m%C3%A9dio" target="_blank" rel="noopener noreferrer" aria-label="Buscar vídeos sobre trigonometria no YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>Buscar vídeos sobre trigonometria</span>
+          </a>
           <div class="video-info">
-            <h3>Trigonometria - Ferretto Matemática</h3>
-            <p>Seno, cosseno, identidades e triângulos.</p>
+            <h3>Trigonometria</h3>
+            <p>Resultados de busca sobre seno, cosseno e triângulos retângulos.</p>
           </div>
         </div>
       </div>
@@ -128,6 +171,6 @@
     <p><i class="fas fa-heart" style="color: #ef4444;"></i> &copy; 2026 Handler - Design Profissional</p>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=3"></script>
 </body>
 </html>
