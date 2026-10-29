@@ -246,7 +246,7 @@ main {
 }
 
 .lesson-content {
-  display: none;
+  display: block;
   margin-top: 1.5rem;
   padding: 1.5rem;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -777,14 +777,21 @@ main {
   border-radius: 10px;
   background: #f0efff;
   color: var(--primary-solid);
-  content: "＋";
+  content: "−";
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
 }
 
-.lesson-card:has(.lesson-content[style*="display: block"]) h3::before,
-.lesson-card:has(.lesson-content.active) h3::before {
+.lesson-card:has(.lesson-content.is-collapsed) h3::before {
+  content: "＋";
+}
+
+.lesson-content.is-collapsed {
+  display: none;
+}
+
+.lesson-card:has(.lesson-content:not(.is-collapsed)) h3::before {
   content: "−";
 }
 

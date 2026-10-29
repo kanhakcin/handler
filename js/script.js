@@ -137,7 +137,7 @@ function initLessons() {
       if (event.target.closest('button, input, a')) return;
       const content = card.querySelector('.lesson-content');
       if (!content) return;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      content.classList.toggle('is-collapsed');
     });
   });
   updateCurrentProgress(progressSummary, completed.size, document.querySelectorAll('.lesson-card').length);
@@ -146,7 +146,7 @@ function initLessons() {
     const target = document.querySelector(location.hash);
     if (target) {
       const content = target.querySelector('.lesson-content');
-      if (content) content.style.display = 'block';
+      if (content) content.classList.remove('is-collapsed');
       requestAnimationFrame(() => target.scrollIntoView());
     }
   }
