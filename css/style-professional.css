@@ -1314,7 +1314,8 @@ body.dark-mode #quiz-score.quiz-score--review {
   font-size: 0.82rem;
 }
 
-.exam-launch {
+.exam-launch,
+.game-launch {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1329,17 +1330,20 @@ body.dark-mode #quiz-score.quiz-score--review {
   box-shadow: var(--shadow-light);
 }
 
-.exam-launch h3 {
+.exam-launch h3,
+.game-launch h3 {
   color: var(--text-dark);
   font-size: 1.05rem;
 }
 
-.exam-launch p {
+.exam-launch p,
+.game-launch p {
   color: var(--text-light);
   font-size: 0.9rem;
 }
 
 .exam-launch .btn,
+.game-launch .btn,
 .exam-submit {
   flex: 0 0 auto;
   border: 0;
@@ -1350,6 +1354,7 @@ body.dark-mode #quiz-score.quiz-score--review {
 }
 
 .exam-launch .btn:hover,
+.game-launch .btn:hover,
 .exam-submit:hover {
   background: #4338ca;
   color: white;
@@ -1374,6 +1379,134 @@ body.dark-mode #quiz-score.quiz-score--review {
   border-radius: 20px;
   background: var(--bg-card);
   box-shadow: var(--shadow-light);
+}
+
+.game-launch {
+  margin-top: 1rem;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(16, 185, 129, 0.13), transparent 13rem),
+    var(--bg-card);
+}
+
+.game-best {
+  margin-top: 0.4rem;
+  color: var(--primary-solid) !important;
+  font-weight: 700;
+}
+
+.quick-game {
+  margin-top: 0.75rem;
+  padding: clamp(1rem, 4vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-light);
+}
+
+.quick-game[hidden] {
+  display: none;
+}
+
+.quick-game h2 {
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.game-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-hud p,
+.game-subject {
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.game-timer {
+  color: var(--primary-solid) !important;
+}
+
+.game-subject {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  border: 0;
+  padding: 0;
+  color: var(--primary-solid);
+}
+
+.game-prompt {
+  margin-bottom: 0.85rem;
+  color: var(--text-dark);
+  font-size: 1.15rem;
+}
+
+.game-choices {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.game-choice {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text-dark);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.game-choice:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--primary-solid);
+}
+
+.game-choice:disabled {
+  cursor: default;
+}
+
+.game-feedback {
+  min-height: 1.5rem;
+  margin-top: 0.7rem;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.game-feedback.is-correct,
+.game-result {
+  color: #047857;
+}
+
+.game-feedback.is-incorrect {
+  color: #b91c1c;
+}
+
+.game-result {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.game-replay {
+  border: 0;
+  background: var(--primary-solid);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.game-replay:hover {
+  background: #4338ca;
+  color: #fff;
 }
 
 .exam-form h2 {
@@ -1531,7 +1664,9 @@ body.dark-mode #quiz-score.quiz-score--review {
 body.dark-mode .content-search,
 body.dark-mode .search-result,
 body.dark-mode .exam-launch,
+body.dark-mode .game-launch,
 body.dark-mode .mock-exam,
+body.dark-mode .quick-game,
 body.dark-mode .exam-timer,
 body.dark-mode .exam-form fieldset,
 body.dark-mode .lesson-complete,
@@ -1545,6 +1680,9 @@ body.dark-mode .content-search input,
 body.dark-mode .content-search select,
 body.dark-mode .section-heading h2,
 body.dark-mode .exam-launch h3,
+body.dark-mode .game-launch h3,
+body.dark-mode .quick-game h2,
+body.dark-mode .game-prompt,
 body.dark-mode .exam-form h2,
 body.dark-mode .exam-form legend {
   color: var(--text-dark);
@@ -1554,6 +1692,27 @@ body.dark-mode .exam-launch {
   background:
     radial-gradient(circle at 90% 15%, rgba(99, 102, 241, 0.14), transparent 13rem),
     var(--bg-card);
+}
+
+body.dark-mode .game-launch {
+  background:
+    radial-gradient(circle at 90% 15%, rgba(16, 185, 129, 0.1), transparent 13rem),
+    var(--bg-card);
+}
+
+body.dark-mode .game-choice {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  color: var(--text-dark);
+}
+
+body.dark-mode .game-feedback.is-correct,
+body.dark-mode .game-result {
+  color: #6ee7b7;
+}
+
+body.dark-mode .game-feedback.is-incorrect {
+  color: #fca5a5;
 }
 
 body.dark-mode .lesson-card.is-complete {
@@ -1592,12 +1751,14 @@ body.dark-mode .exam-result {
     border-left: 0;
   }
 
-  .exam-launch {
+  .exam-launch,
+  .game-launch {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .exam-launch .btn {
+  .exam-launch .btn,
+  .game-launch .btn {
     width: 100%;
   }
 }

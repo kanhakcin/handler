@@ -283,7 +283,16 @@ async function loadSubjectPages() {
       title: lesson.querySelector('h3')?.textContent.trim() || `Aula ${index + 1}`,
       text: lesson.textContent.replace(/\s+/g, ' ').trim()
     }));
-    return { ...subject, lessons };
+    const questions = [...doc.querySelectorAll('.quiz-question')].map(question => ({
+      subject: subject.name,
+      prompt: question.querySelector('p')?.textContent.trim() || '',
+      choices: [...question.querySelectorAll('label')].map(label => ({
+        text: label.textContent.trim(),
+        correct: label.querySelector('input')?.value === 'correct'
+      }))
+    })).filter(question => question.prompt && question.choices.length > 1 &&
+      question.choices.some(choice => choice.correct));
+    return { ...subject, lessons, questions };
   }));
   return pages;
 }
@@ -335,7 +344,9 @@ function initExam(pages) {
 
   startButton.addEventListener('click', () => {
     startButton.disabled = true;
-    startExamRun(pages, exam, startButton).catch(error => {
+    try {
+      startExamRun(pages, exam, startButton);
+    } catch (error) {
       console.error('Não foi possível iniciar o simulado.', error);
       const message = document.createElement('p');
       message.className = 'exam-result quiz-score--review';
@@ -343,27 +354,12 @@ function initExam(pages) {
       exam.replaceChildren(message);
       exam.hidden = false;
       startButton.disabled = false;
-    });
+    }
   });
 }
 
-async function startExamRun(pages, exam, startButton) {
-  const questionPool = [];
-  await Promise.all(pages.map(async subject => {
-    const response = await fetch(`subjects/${subject.id}.html`);
-    if (!response.ok) throw new Error(`Falha ao carregar o simulado de ${subject.name}.`);
-    const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
-    doc.querySelectorAll('.quiz-question').forEach(question => {
-      questionPool.push({
-        subject: subject.name,
-        prompt: question.querySelector('p')?.textContent.trim() || '',
-        choices: [...question.querySelectorAll('label')].map(label => ({
-          text: label.textContent.trim(),
-          correct: label.querySelector('input')?.value === 'correct'
-        }))
-      });
-    });
-  }));
+function startExamRun(pages, exam, startButton) {
+  const questionPool = pages.flatMap(subject => subject.questions);
   for (let index = questionPool.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(Math.random() * (index + 1));
     [questionPool[index], questionPool[swapIndex]] = [questionPool[swapIndex], questionPool[index]];
@@ -371,6 +367,162 @@ async function startExamRun(pages, exam, startButton) {
   const selected = questionPool.slice(0, 10);
   if (selected.length < 10) throw new Error('O simulado precisa de pelo menos 10 questões.');
   renderExam(selected, exam, startButton);
+}
+
+function initQuickGame(pages) {
+  const startButton = document.querySelector('#start-game');
+  const game = document.querySelector('#quick-game');
+  const bestLabel = document.querySelector('#game-best');
+  if (!startButton || !game || !bestLabel) return;
+
+  const bestScores = readStore(SCORES_KEY);
+  bestLabel.textContent = `Seu recorde: ${bestScores.quickGame || 0} pontos`;
+
+  startButton.addEventListener('click', () => {
+    const questions = pages.flatMap(subject => subject.questions);
+    if (!questions.length) {
+      console.error('Não há perguntas disponíveis para o desafio relâmpago.');
+      game.textContent = 'Não foi possível carregar as perguntas. Tente novamente mais tarde.';
+      game.hidden = false;
+      return;
+    }
+
+    startButton.disabled = true;
+    startButton.hidden = true;
+    game.hidden = false;
+    startQuickGame(questions, game, startButton, bestLabel);
+  });
+}
+
+function startQuickGame(questionPool, game, startButton, bestLabel) {
+  const questions = [...questionPool];
+  for (let index = questions.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [questions[index], questions[swapIndex]] = [questions[swapIndex], questions[index]];
+  }
+
+  let score = 0;
+  let streak = 0;
+  let questionIndex = 0;
+  let remaining = 60;
+  let locked = false;
+  let finished = false;
+  let advanceTimeout;
+
+  const heading = document.createElement('h2');
+  heading.textContent = 'Desafio relâmpago';
+  const hud = document.createElement('div');
+  hud.className = 'game-hud';
+  const timer = document.createElement('p');
+  timer.className = 'game-timer';
+  timer.setAttribute('role', 'timer');
+  const scoreLabel = document.createElement('p');
+  scoreLabel.className = 'game-score';
+  const streakLabel = document.createElement('p');
+  streakLabel.className = 'game-streak';
+  hud.append(timer, scoreLabel, streakLabel);
+
+  const subjectLabel = document.createElement('p');
+  subjectLabel.className = 'game-subject';
+  const prompt = document.createElement('h3');
+  prompt.className = 'game-prompt';
+  const choices = document.createElement('div');
+  choices.className = 'game-choices';
+  const feedback = document.createElement('p');
+  feedback.className = 'game-feedback';
+  feedback.setAttribute('role', 'status');
+  feedback.setAttribute('aria-live', 'polite');
+  game.replaceChildren(heading, hud, subjectLabel, prompt, choices, feedback);
+
+  const renderHud = () => {
+    timer.textContent = `Tempo: ${remaining}s`;
+    scoreLabel.textContent = `Pontos: ${score}`;
+    streakLabel.textContent = streak > 1 ? `Sequência: ${streak} acertos` : 'Acerte em sequência para ganhar bônus!';
+  };
+
+  const showQuestion = () => {
+    if (finished) return;
+    if (questionIndex >= questions.length) {
+      for (let index = questions.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [questions[index], questions[swapIndex]] = [questions[swapIndex], questions[index]];
+      }
+      questionIndex = 0;
+    }
+    const question = questions[questionIndex];
+    questionIndex += 1;
+    locked = false;
+    feedback.textContent = '';
+    feedback.classList.remove('is-correct', 'is-incorrect');
+    subjectLabel.textContent = question.subject;
+    prompt.textContent = question.prompt;
+    choices.replaceChildren();
+
+    question.choices.forEach(choice => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'game-choice';
+      button.textContent = choice.text;
+      button.addEventListener('click', () => {
+        if (locked || finished) return;
+        locked = true;
+        choices.querySelectorAll('button').forEach(option => { option.disabled = true; });
+        if (choice.correct) {
+          streak += 1;
+          const points = 10 + Math.min(streak - 1, 4);
+          score += points;
+          feedback.textContent = `Correto! +${points} pontos${streak > 1 ? ` · ${streak} acertos seguidos!` : ''}`;
+          feedback.classList.add('is-correct');
+          feedback.classList.remove('is-incorrect');
+        } else {
+          const correctChoice = question.choices.find(option => option.correct);
+          streak = 0;
+          feedback.textContent = `Quase! A resposta era: ${correctChoice?.text || 'veja o conteúdo da disciplina'}.`;
+          feedback.classList.add('is-incorrect');
+          feedback.classList.remove('is-correct');
+        }
+        renderHud();
+        advanceTimeout = setTimeout(showQuestion, 800);
+      });
+      choices.append(button);
+    });
+  };
+
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    clearInterval(timerId);
+    clearTimeout(advanceTimeout);
+    const scores = readStore(SCORES_KEY);
+    const previousBest = scores.quickGame || 0;
+    scores.quickGame = Math.max(previousBest, score);
+    writeStore(SCORES_KEY, scores);
+    bestLabel.textContent = `Seu recorde: ${scores.quickGame} pontos`;
+    const result = document.createElement('p');
+    result.className = 'game-result';
+    result.textContent = score > previousBest
+      ? `Fim de jogo! Você fez ${score} pontos e bateu seu recorde!`
+      : `Fim de jogo! Você fez ${score} pontos. Seu recorde é ${scores.quickGame}.`;
+    const replay = document.createElement('button');
+    replay.type = 'button';
+    replay.className = 'btn game-replay';
+    replay.textContent = 'Jogar novamente';
+    replay.addEventListener('click', () => startButton.click());
+    game.replaceChildren(heading, result, replay);
+    startButton.disabled = false;
+    startButton.hidden = false;
+    startButton.textContent = 'Jogar novamente';
+  };
+
+  const updateTimer = () => {
+    remaining = Math.max(0, Math.ceil((startedAt + 60000 - Date.now()) / 1000));
+    renderHud();
+    if (remaining === 0) finish();
+  };
+  const startedAt = Date.now();
+  const timerId = setInterval(updateTimer, 250);
+  renderHud();
+  showQuestion();
 }
 
 function renderExam(questions, exam, startButton) {
@@ -483,6 +635,7 @@ async function initHome() {
     updateSubjectProgress();
     initSubjectSearch(pages);
     initExam(pages);
+    initQuickGame(pages);
   } catch (error) {
     console.error('Não foi possível inicializar busca, progresso e simulado.', error);
   }

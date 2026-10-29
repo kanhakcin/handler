@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#3730a3">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/handler.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style-professional.css?v=8">
+  <link rel="stylesheet" href="css/style-professional.css?v=9">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -58,6 +58,15 @@
       <button id="start-exam" class="btn" type="button">Começar simulado <i class="fas fa-arrow-right"></i></button>
     </div>
     <section id="mock-exam" class="mock-exam" aria-live="polite" hidden></section>
+    <div class="game-launch">
+      <div>
+        <h3>Desafio relâmpago</h3>
+        <p>Responda o máximo de perguntas em 60 segundos. Acerte para somar pontos e bater seu recorde!</p>
+        <p id="game-best" class="game-best" aria-live="polite">Seu recorde: 0 pontos</p>
+      </div>
+      <button id="start-game" class="btn" type="button">Jogar agora <i class="fas fa-gamepad" aria-hidden="true"></i></button>
+    </div>
+    <section id="quick-game" class="quick-game" aria-live="polite" hidden></section>
   </section>
 
   <section id="subjects" class="subject-grid">
@@ -92,6 +101,6 @@
     <p><i class="fas fa-heart"></i> &copy; 2026 Handler - Design Profissional</p>
   </footer>
 
-  <script src="js/script.js?v=9"></script>
+  <script src="js/script.js?v=11"></script>
 </body>
 </html>
