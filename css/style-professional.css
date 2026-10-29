@@ -611,6 +611,7 @@ nav ul li a:focus-visible {
 }
 
 .hero {
+  position: relative;
   max-width: var(--page-width);
   margin: 2.25rem auto 0;
   padding: clamp(4.5rem, 10vw, 8rem) 2rem;
@@ -621,6 +622,25 @@ nav ul li a:focus-visible {
     radial-gradient(circle at 82% 18%, rgba(167, 139, 250, 0.4), transparent 18rem),
     linear-gradient(125deg, #1d2352 0%, #3730a3 52%, #6d4ad1 100%);
   box-shadow: 0 28px 70px rgba(47, 42, 122, 0.2);
+}
+
+.hero::after {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  width: clamp(150px, 24vw, 280px);
+  aspect-ratio: 3 / 2;
+  border-radius: 8px;
+  background: url("../icons/guinea-bissau.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0.09;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(-8deg) scale(1.2);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -1169,6 +1189,13 @@ body.dark-mode #quiz-score.quiz-score--review {
     margin: 1rem 1rem 0;
     padding: 4.5rem 1.25rem;
     border-radius: 24px;
+  }
+
+  .hero::after {
+    top: 18%;
+    right: -2%;
+    width: 145px;
+    opacity: 0.07;
   }
 
   .subject-grid {

@@ -1,8 +1,8 @@
-const CACHE_NAME = 'handler-shell-v12';
+const CACHE_NAME = 'handler-shell-v13';
 const APP_FILES = [
   './',
   './index.html',
-  './css/style-professional.css?v=11',
+  './css/style-professional.css?v=12',
   './js/script.js?v=11',
   './manifest.webmanifest',
   './icons/handler.svg',
